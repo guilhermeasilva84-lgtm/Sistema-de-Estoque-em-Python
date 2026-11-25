@@ -423,6 +423,7 @@ class ApiHandler(BaseHTTPRequestHandler):
             self._send(400,{'ok':False,'error':str(exc)})
 
 
+
 def start_server():
     init_db(); srv=ThreadingHTTPServer(('127.0.0.1',PORT),ApiHandler); threading.Thread(target=srv.serve_forever,daemon=True).start(); return srv
 
